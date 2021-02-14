@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
  // templateUrl: './app.component.html',
   //styleUrls: ['./app.component.css']
   template:`
-  <h2>Hello from Ardouz s first app</h2>
-  <img src="/assets/images/basic-shield.png">
+  <events-list></events-list>
   `
 })
 export class EventsAppComponent {
