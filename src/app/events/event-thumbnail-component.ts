@@ -1,23 +1,23 @@
-import {Component,Input, Output,EventEmitter} from '@angular/core'
+import {Component,Input,Output,EventEmitter} from '@angular/core'
 @Component({
     selector:'event-thumbnail',
     template:`
     <div class="well hoverwell thumbnail">
-    <h2>{{event?.name}}</h2>
-    <div> Date:{{event?.date}}</div>
-    <div [ngSwitch]="event?.time"> 
-    Time:{{event?.time}}
+    <h2>{{eventThumbnail?.name}}</h2>
+    <div> Date:{{eventThumbnail?.date}}</div>
+    <div [ngSwitch]="eventThumbnail?.time"> 
+    Time:{{eventThumbnail?.time}}
     <span *ngSwitchCase="'8:00 am'">(Early Start) </span>
     <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
     <span *ngSwitchDefault>(Normal Start)</span>
     </div>
-    <div> Price:{{event?.price}}\$</div>
-    <div *ngIf="event?.location">
-    <span>location :{{event?.location?.address}}</span>
-    <span class="pad-left">{{event?.location?.city}},{{event?.location?.country}}</span>
+    <div> Price:{{eventThumbnail?.price}}\$</div>
+    <div *ngIf="eventThumbnail?.location">
+    <span>location :{{eventThumbnail?.location?.address}}</span>
+    <span class="pad-left">{{eventThumbnail?.location?.city}},{{eventThumbnail?.location?.country}}</span>
     </div>
-    <div *ngIf="event?.onlineUrl">
-    Online URL:{{event?.onlineUrl}}
+    <div *ngIf="eventThumbnail?.onlineUrl">
+    Online URL:{{eventThumbnail?.onlineUrl}}
     </div>
     </div>`,
     styles:[`
@@ -27,10 +27,11 @@ import {Component,Input, Output,EventEmitter} from '@angular/core'
     `]
 })
 export class EventThumbnailComponent{
-@Input() event:any
+@Input() eventThumbnail:any
+/*
 @Output() eventClick=new EventEmitter()
 handleClickMe(){
-    console.log("it works")
-    this.eventClick.emit('foo')
-}
+    //console.log("it works")
+    this.eventClick.emit(event.name)
+}*/
 }
