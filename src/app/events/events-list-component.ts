@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core'
 import { from } from 'rxjs'
 import { EventService } from './shared/event.service'
-import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr'
+import { ActivatedRoute } from '@angular/router'
 @Component({
-    selector:'events-list',
+   // selector:'events-list',
    // templateUrl:'./events-list-component.html'
     template:`
     <div>
@@ -21,13 +22,15 @@ import { ToastrService } from 'ngx-toastr';
 
 })
 export class EventsListComponent implements OnInit{
-  events:any[]
+  events:any
 
-   constructor(private eventService:EventService,private toastr:ToastrService){
+   constructor(private eventService:EventService,private toastr:ToastrService,private route:ActivatedRoute){
     
    }
    ngOnInit(){
-    this.events=this.eventService.getEvents()
+       this.events=this.route.snapshot.data['events']
+
+    //this.eventService.getEvents().subscribe(events=>{this.events=events})
    }
     handleEventClicked(data){
         console.log("name of event "+data)
