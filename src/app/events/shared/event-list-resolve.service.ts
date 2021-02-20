@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core'
 import {Resolve } from '@angular/router'
-import { EventEmitter } from 'selenium-webdriver'
 import { EventService } from './event.service'
 import {map} from 'rxjs/operators'
 @Injectable()

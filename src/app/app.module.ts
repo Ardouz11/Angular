@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {appRoutes} from './routes'
 import { RouterModule } from '@angular/router';
+import { AuthService } from './user/auth.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -37,7 +38,7 @@ import { RouterModule } from '@angular/router';
   {
     provide:'canDeactivateCreateEvent',
     useValue:checkDirtyState
-  },EventListResolver], 
+  },EventListResolver,AuthService], 
   //to add some services
   bootstrap: [EventsAppComponent]
 })
