@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 
 @Component({
-  template: `
+ /* template: `
     <h1>Edit Your Profile</h1>
     <hr>
     <div class="col-md-6">
@@ -11,7 +11,8 @@ import { Component } from '@angular/core'
       <button type="submit" class="btn btn-primary">Save</button>
       <button type="button" class="btn btn-default">Cancel</button>
     </div>
-  `,
+  `*/
+  templateUrl:'./profile.component.html',
 })
 export class ProfileComponent {
        
