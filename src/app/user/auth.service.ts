@@ -15,4 +15,9 @@ this.currentUser={
 isAuthenticated(){
     return !!this.currentUser
 }
+updateCurrentUser(firstName:string,lastName:string){
+    this.currentUser.firstName=firstName
+    this.currentUser.lastName=lastName
+
+}
 }
