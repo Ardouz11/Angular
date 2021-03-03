@@ -17,12 +17,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {appRoutes} from './routes'
 import { RouterModule } from '@angular/router';
 import { AuthService } from './user/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     EventsAppComponent,
