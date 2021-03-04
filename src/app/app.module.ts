@@ -7,7 +7,7 @@ import{
   EventDetailsComponent,
   CreateEventComponent,
   Error404Component,
-  EventRouteActivator,
+ 
   EventListResolver,
   EventsListComponent
 }from './events/index'
@@ -18,6 +18,9 @@ import {appRoutes} from './routes'
 import { RouterModule } from '@angular/router';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SessionListCompoenent } from './events/event-details/session-list.component';
+import { CreateSessionComponent } from './events/event-details/create-session.component';
+import { EventRouteActivator } from './events/event-details/event-router-activator.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FormsModule,
+   
     ReactiveFormsModule
   ],
   declarations: [
@@ -35,6 +39,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
+    
+    SessionListCompoenent,
+    CreateSessionComponent
 
   ],
   providers: [EventService,EventRouteActivator,
