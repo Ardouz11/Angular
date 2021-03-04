@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SessionListCompoenent } from './events/event-details/session-list.component';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { EventRouteActivator } from './events/event-details/event-router-activator.service';
+import { ColapsibleComponent } from './colapsible/colapsible.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -39,9 +40,10 @@ import { EventRouteActivator } from './events/event-details/event-router-activat
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
-    
+    ColapsibleComponent,
     SessionListCompoenent,
-    CreateSessionComponent
+    CreateSessionComponent,
+    ColapsibleComponent
 
   ],
   providers: [EventService,EventRouteActivator,
