@@ -22,6 +22,7 @@ import { SessionListCompoenent } from './events/event-details/session-list.compo
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { EventRouteActivator } from './events/event-details/event-router-activator.service';
 import { ColapsibleComponent } from './colapsible/colapsible.component';
+import { DurationPipe } from './events/shared/duration.pipe';
 @NgModule({
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import { ColapsibleComponent } from './colapsible/colapsible.component';
     ColapsibleComponent,
     SessionListCompoenent,
     CreateSessionComponent,
-    ColapsibleComponent
+    ColapsibleComponent,
+    DurationPipe
 
   ],
   providers: [EventService,EventRouteActivator,
