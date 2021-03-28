@@ -1,6 +1,8 @@
-import {Injectable } from '@angular/core'
+import {EventEmitter, Injectable } from '@angular/core'
+
 import {Observable, Subject } from 'rxjs'
-import { IEvent } from './event.model';
+
+import { IEvent, ISession } from './event.model';
 @Injectable()
 export class EventService{
     getEvents():Observable<IEvent[]>{
@@ -21,8 +23,31 @@ export class EventService{
       events[index]=event
 
     }
+    searchSessions(searchTerm)
+    {
+      var term=searchTerm.toLocaleLowerCase()
+      var results:ISession[]=[]
+      events.forEach(event=>{
+        var matchingSessions=event.sessions.filter(session=>
+          session.name.toLocaleLowerCase().indexOf(term)>-1)
+          matchingSessions=matchingSessions.map((session:any)=>{
+            session.eventId=event.id
+            return session
+          })
+          results=results.concat(matchingSessions)
+          })
+          var eventEmitter=new EventEmitter()
+          setTimeout(()=>{
+            eventEmitter.emit(results)
+            console.log(results)
+          },100)
+          return eventEmitter
+    
+  }
 }
-const  events :IEvent[]= [
+  
+
+    const  events :IEvent[]= [
     {
       id: 1,
       name: 'Angular Connect',
