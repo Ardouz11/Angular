@@ -23,8 +23,9 @@ export class EventDetailsComponent{
         
     this.activatedRoute.params.forEach((params:Params)=>{
             this.event=this.eventService.getEvent(+params['id'])
+            this.addMode=false
         })
-        this.addMode=false
+        
 
 
     }
