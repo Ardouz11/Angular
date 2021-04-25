@@ -27,6 +27,7 @@ import { DurationPipe } from './events/shared/duration.pipe';
 import { JQUERY_TOKEN } from './colapsible/JQuery.service';
 import { SimpleModalComponent } from './colapsible/simple-modal.component';
 import { ModalTriggerDitrective } from './colapsible/modal-trigger.directive';
+import {HttpClientModule} from '@angular/common/http'
 
 let jQuery=window['$']
 @NgModule({
@@ -36,8 +37,8 @@ let jQuery=window['$']
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FormsModule,
-   
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     EventsAppComponent,
